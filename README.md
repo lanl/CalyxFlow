@@ -32,6 +32,8 @@ In one window, serve your model:
 ./run-scripts/run_vllm.sh <model> <model name> ["<extra vLLM args>"] [profile] [profile dir=./vllm_profiler]
 ```
 
+For `meta-llama/Llama-3.3-70B-Instruct`, I've needed to use `"--quantization=fp8 --kv-cache-dtype=fp8 --cpu-offload-gb=100 --max-model-len=64K"` as additional args.
+
 In another, run the workflow:
 ```
 . .venv/bin/activate

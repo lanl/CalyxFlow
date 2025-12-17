@@ -17,7 +17,7 @@ import asyncio
 
 import sys
 sys.path.append(".")
-from agents.llama_index_tools import *
+from src.lammps_tools import *
 
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -104,7 +104,7 @@ async def main():
 
     llamaParser = LlamaJSONToolOutputParser()
 
-    with open("agents/instructions/io.txt", "r") as f:
+    with open("src/instructions/io.txt", "r") as f:
         ioAgentPrompt = f.read()
     ioAgent = ReActAgent(tools=[unique_output_dir_tool, write_file_tool, read_file_tool], llm=llm, system_prompt=(
     "You are an assistant that uses tools to do file I/O operations. "

@@ -41,7 +41,7 @@ if [[ "$model_server" == "vllm" && "$do_profile" == "profile" ]]; then
     set +e
 fi
 
-python3 -m src.llamaindextest ${model} \
+python3 -m src.lammps_workflow ${model} \
     --inputFileDir="${inDir}" \
     --lammps="${lammpsBin}" \
     --port=$port
